@@ -9,13 +9,13 @@ import se.itmo.ru.mainstory.Story;
 
 public class Main {
     public static void main(String[] args) throws DeathOfPersonException, NegativeAmountException {
-        Hero karlson = new Hero("Карлсон", HealthCondition.GOOD);
-        Hero malysh = new Hero("Малыш", HealthCondition.SICK);
+        Hero karlson = new Hero("Карлсон", HealthCondition.SICK);
+        Hero malysh = new Hero("Малыш", HealthCondition.GOOD);
         Argue newArgue = new Argue(karlson, malysh);
         Chocolate chocolate = new Chocolate();
         Story.story(karlson, malysh, chocolate);
         System.out.println();
-        newArgue.completeArgue(chocolate, 2988);
+        newArgue.completeArgue(chocolate, 2);
 
     }
 }
