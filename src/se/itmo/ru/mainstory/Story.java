@@ -7,6 +7,7 @@ import se.itmo.ru.interfaces.Remainable;
 
 public class Story {
     public static void story(Person sick, Person good, ReasonOfArgue reasonOfArgue) throws WrongConditionException {
+
         class Justice {
             private final String name = "Справедливость";
             private final String not = " не ";
@@ -92,12 +93,11 @@ public class Story {
                 }
             }
         }
-
-        public Person getPerson1() {
+        private Person getPerson1() {
             return person1;
         }
 
-        public Person getPerson2() {
+        private Person getPerson2() {
             return person2;
         }
     }

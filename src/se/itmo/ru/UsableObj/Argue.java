@@ -12,7 +12,7 @@ public class Argue implements WinAnArgue, CompleteArgue {
     private final Person person2;
 
     private class Solution {
-        private int amount;
+        private final int amount;
 
         public Solution(int amount) {
             this.amount = amount;
@@ -66,7 +66,7 @@ public class Argue implements WinAnArgue, CompleteArgue {
     }
 
     @Override
-    public void completeArgue(ReasonOfArgue reason, int amountOfMedicine) throws DeathOfPersonException, NegativeAmountException {
+    public void completeArgue(ReasonOfArgue reason, int amountOfMedicine) {
         try {
             Solution solution = new Solution(amountOfMedicine);
             solution.useMedicine();
@@ -76,6 +76,8 @@ public class Argue implements WinAnArgue, CompleteArgue {
             System.out.println("Температура " + person1.getName() + ": " + person1.getTemperature());
         } catch (NegativeAmountException e) {
             System.err.println(e.getMessage());
+        }finally {
+            System.out.println("Конец истории.");
         }
 
     }

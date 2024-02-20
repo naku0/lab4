@@ -1,14 +1,13 @@
 package se.itmo.ru;
 
 import se.itmo.ru.enums.HealthCondition;
-import se.itmo.ru.exceptions.*;
+import se.itmo.ru.exceptions.WrongConditionException;
 import se.itmo.ru.heroes.*;
 import se.itmo.ru.UsableObj.*;
 import se.itmo.ru.mainstory.Story;
 
-
 public class Main {
-    public static void main(String[] args) throws DeathOfPersonException, NegativeAmountException {
+    public static void main(String[] args) throws WrongConditionException {
         Hero karlson = new Hero("Карлсон", HealthCondition.SICK);
         Hero malysh = new Hero("Малыш", HealthCondition.GOOD);
         Argue newArgue = new Argue(karlson, malysh);
@@ -16,7 +15,6 @@ public class Main {
         Story.story(karlson, malysh, chocolate);
         System.out.println();
         newArgue.completeArgue(chocolate, 2);
-
     }
 }
 /*
